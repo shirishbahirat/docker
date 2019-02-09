@@ -20,7 +20,9 @@ RUN apt-get update && \
     ls .. && \
     ../configure -prefix=/usr/local/systemc-2.3 && \
     make && \
-    make install
+    make install && \
+    export LD_LIBRARY_PATH=/usr/local/systemc-2.3/lib-linux64:$LD_LIBRARY_PATH && \
+    export SYSTEMC_HOME=/usr/local/systemc-2.3/
 
 ENV HOME /home
 
